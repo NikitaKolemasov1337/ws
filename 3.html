@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторная работа №3</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    //функция для создания массива пользователем
+    function newMas(){
+        var n = Number(prompt("Введите количество элементов:"));
+        var nMas = [];
+        for(var i=0; i<n; i++){
+            nMas[i]=Number(prompt("Введите число:"));
+        }
+        return nMas;
+    }  
+
+    //Функция для нахождения индекса максимального элемента
+    function findIMax(arr){
+        var max=0;
+        for(var i=1; i<arr.length; i++){
+            if(arr[i]>arr[max]){
+                max=i;
+            }
+        }
+        return max;
+    }
+
+    var myArray = newMas();
+    var indMax = findIMax(myArray);
+
+    //Сумма элементов массива, располоенных между первым и вторым нулевыми элементами
+    var first0El;
+    var second0El;
+    var sum0=0;
+    for( var i=0; i<myArray.length; i++){
+        if(myArray[i]==0){
+            first0El=i;
+            for( var l=i+1; l<myArray.length; l++){
+                if(myArray[l]==0){
+                second0El=l;
+                break;
+                }
+            }
+            break;
+        }
+    }
+    console.log(first0El);
+    console.log(second0El);
+
+        var proizv=1;
+        for( var i=first0El+1; i<second0El; i++){
+            summ+=myArray[i];
+        }
+
+        //Массив, где сначала располагаются все элементы модуль которых не превышает 1, а потом все остальные
+        var chet=[];
+        var nechet=[];
+        for(var l = 0;l<myArray.length; l++){
+            if(l%2==0){
+                chet.push(myArray[l]);
+            }
+            else{
+                nechet.push(myArray[l]);
+            }
+        }
+        myArray=nechet.concat(chet);
+
+        var str = myArray.join("; ");
+        document.writeln("Индекс максимального элемента: "+indMax+"; Сумма элементов массива, располоенных между первым и вторым нулевыми элементами: "+proizv+"; Массив, где сначала располагаются все элементы модуль которых не превышает 1, а потом все остальные: "+str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

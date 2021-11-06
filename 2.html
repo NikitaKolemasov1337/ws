@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторная работа №2</title>
+    <script type="text/javascript">
+        function func(){
+            var x = Number (document.forms["frm"].elements["varx"].value);
+            var n = Number (document.forms["frm"].elements["varn"].value);
+            var b = 0;
+            for(var a=0; a<=n; a++){
+                b=(3.14/2)+(((-1)**(a+1))/((2*a+1)*(x**(2*a+1))));
+            }
+            
+            alert(b);
+        }
+
+
+    </script>
+</head>
+<body>
+    <form id="frm">
+        <p>Введите число x от -1 до 1:</p>
+        <input type="text" name="varx" id="x">
+        <p>Введите число n:</p>
+        <input type="text" name="varn" id="n">
+        <input type="submit" value="OK" onclick="func()">
+    </form>
+</body>
+</html>
