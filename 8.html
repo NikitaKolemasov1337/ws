@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторная работа №8</title>
+    <meta charset="utf-8">
+</head>
+<body style='background-color: white; color: black' class = "chang">
+<h1>Колемасов Никита</h1>
+<h2>Лабораторная работа 8</h2>
+<p><a href="https://yandex.ru/" class="hreff" style="color: black;">Ссылка</a></p>
+    <script type="text/javascript">
+        var a = prompt("Цвет фона:");
+        var b = prompt("Цвет текста:");
+        var c = prompt("Ссылка");
+        var myBody = document.querySelector("body.chang");
+        myBody.setAttribute("style", `background-color:${a}`);
+        var a = document.documentElement;
+        a.style.color = b;
+        var anc = document.querySelector("a.hreff");
+        anc.setAttribute("href", `${c}`);
+    </script>
+</body>
+</html>
