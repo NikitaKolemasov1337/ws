@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Лабораторная работа №3</title>
-    <meta charset="utf-8">
-    <script type="text/javascript">
-    //функция для создания массива пользователем
-    function newMas(){
-        var n = Number(prompt("Введите количество элементов:"));
-        var nMas = [];
-        for(var i=0; i<n; i++){
-            nMas[i]=Number(prompt("Введите число:"));
-        }
-        return nMas;
-    }  
+<title>Лабораторная работа №3</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+//функция для создания массива пользователем
+function newMas(){
+    var n = Number(prompt("Введите количество элементов:"));
+    var nMas = [];
+    for(var i=0; i<n; i++){
+    nMas[i]=Number(prompt("Введите число:"));
+    }
+    return nMas;
+    }
 
     //Функция для нахождения индекса максимального элемента
     function findIMax(arr){
-        var max=0;
-        for(var i=1; i<arr.length; i++){
-            if(arr[i]>arr[max]){
-                max=i;
-            }
-        }
-        return max;
+    var max=0;
+    for(var i=1; i<arr.length; i++){
+    if(arr[i]>arr[max]){
+    max=i;
+    }
+    }
+    return max;
     }
 
     var myArray = newMas();
@@ -47,28 +47,26 @@
     console.log(first0El);
     console.log(second0El);
 
-        var proizv=1;
         for( var i=first0El+1; i<second0El; i++){
-            summ+=myArray[i];
+            sum0+=myArray[i];
         }
 
         //Массив, где сначала располагаются все элементы модуль которых не превышает 1, а потом все остальные
-        var chet=[];
-        var nechet=[];
-        for(var l = 0;l<myArray.length; l++){
-            if(l%2==0){
-                chet.push(myArray[l]);
+        var men=[];
+        var bol=[];
+        for(var l=0;l<myArray.length;l++){
+            if(Math.abs(myArray[l])<=1){
+                men.push(myArray[l]);
             }
             else{
-                nechet.push(myArray[l]);
+                bol.push(myArray[l]);
             }
         }
-        myArray=nechet.concat(chet);
+        myArray=men.concat(bol);
 
         var str = myArray.join("; ");
-        document.writeln("Индекс максимального элемента: "+indMax+"; Сумма элементов массива, располоенных между первым и вторым нулевыми элементами: "+proizv+"; Массив, где сначала располагаются все элементы модуль которых не превышает 1, а потом все остальные: "+str);
-    </script>
-</head>
+        document.writeln("Индекс максимального элемента: "+indMax+"; Сумма элементов массива, расположенных между первым и вторым нулевыми элементами: "+sum0+"; Массив, где сначала располагаются все элементы модуль которых не превышает 1, а потом все остальные: "+str);
+    </script></head>
 <body>
 
 </body>
