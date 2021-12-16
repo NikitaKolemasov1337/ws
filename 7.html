@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Колемасов Никита</title>
+</head>
+<body>
+<script type="text/javascript">
+  var x = prompt("Введите пожалуйста х - ");
+  var otv = 0;
+  function browser(){
+  if (navigator.userAgent.indexOf('Firefox')!== -1) {
+    otv = Math.cos(x)
+    alert (otv);
+  } else if (navigator.userAgent.indexOf('Edg')!== -1) {
+    otv = Math.sin(x)
+    alert (otv);
+  } else if (navigator.userAgent.indexOf('OPR')!== -1) {
+    otv=Number(x)*10;
+    alert (otv);
+  }  else if (navigator.userAgent.indexOf('Chrome')!== -1) {
+    otv = Math.pow(x, 3)/9;
+   alert (otv);
+  }
+}
+browser()
+    </script>
+</body>
+</html>
